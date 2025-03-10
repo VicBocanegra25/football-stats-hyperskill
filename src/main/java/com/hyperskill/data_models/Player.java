@@ -2,33 +2,34 @@ package com.hyperskill.data_models;
 
 /**
  * Player (base abstract class: Person)
- *
+ * <p>
  * Attributes: String firstName, String lastName, String team
  * Methods: display/update stats (goals scored, matches played, average goals scored, etc.) by year and total, etc.
  */
 
-public class Player extends Person{
+public class Player extends Person {
     private int id;
     private Team team;
     private int goals;
 
-    public Player(int id, String firstName, String lastName, Team team, int goals){
+    public Player(){}
+
+    public Player(int id, String firstName, String lastName, Team team, int goals) {
         super(firstName, lastName);
         this.id = id;
         this.team = team;
         this.goals = goals;
-
     }
 
     public int getId() {
         return id;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return super.getFirstName();
     }
 
-    public String getLastName(){
+    public String getLastName() {
         return super.getLastname();
     }
 
@@ -63,6 +64,10 @@ public class Player extends Person{
                 "}";
     }
 
-    public void displayStats(){}
-    public void updateStats(){}
+    public int goalsScoredTotal(Player player) {
+        return player.getGoals();
+    }
+
+    public void updateStats() {
+    }
 }

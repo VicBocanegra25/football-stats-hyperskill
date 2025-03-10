@@ -3,6 +3,7 @@ package com.hyperskill;
 import com.hyperskill.data_models.Coach;
 import com.hyperskill.data_models.Player;
 import com.hyperskill.data_models.Team;
+
 import java.util.*;
 
 public class FootballStatisticsDB {
@@ -16,7 +17,7 @@ public class FootballStatisticsDB {
 
     // Create
     public void addPlayer(Player player) {
-        if(player == null){
+        if (player == null) {
             System.out.println("player is null.");
             return;
         }
@@ -27,7 +28,7 @@ public class FootballStatisticsDB {
 
     // Read
     public Player getPlayer(int id) {
-        if(!players.containsKey(id)){
+        if (!players.containsKey(id)) {
             return null;
         }
         return players.get(id);
@@ -39,8 +40,8 @@ public class FootballStatisticsDB {
 
     public Collection<Player> getPlayersByTeam(Team team) {
         Set<Player> playersTeam = new HashSet<>();
-        for(Player player : players.values()){
-            if(player.getTeam().equals(team)){
+        for (Player player : players.values()) {
+            if (player.getTeam().equals(team)) {
                 playersTeam.add(player);
             }
         }
@@ -51,13 +52,13 @@ public class FootballStatisticsDB {
     public void updatePlayerGoals(int id, int goals) {
         Player player = getPlayer(id);
         player.setGoals(goals);
-        players.put(id,player);
+        players.put(id, player);
     }
 
     public void updatePlayerTeam(int id, Team team) {
         Player player = getPlayer(id);
         player.setTeam(team);
-        players.put(id,player);
+        players.put(id, player);
     }
 
     // Delete
@@ -67,7 +68,7 @@ public class FootballStatisticsDB {
 
     // Create
     public void addCoach(Coach coach) {
-        if(coach == null){
+        if (coach == null) {
             System.out.println("coach is null.");
             return;
         }
@@ -78,7 +79,7 @@ public class FootballStatisticsDB {
 
     // Read
     public Coach getCoach(int id) {
-        if(!coaches.containsKey(id)){
+        if (!coaches.containsKey(id)) {
             return null;
         }
         return coaches.get(id);
@@ -90,8 +91,8 @@ public class FootballStatisticsDB {
 
     public Collection<Coach> getCoachesByTeam(Team team) {
         Set<Coach> coachesTeam = new HashSet<>();
-        for(Coach coach : coaches.values()){
-            if(coach.getTeam().equals(team)){
+        for (Coach coach : coaches.values()) {
+            if (coach.getTeam().equals(team)) {
                 coachesTeam.add(coach);
             }
         }
@@ -102,7 +103,7 @@ public class FootballStatisticsDB {
     public void updateCoachTeam(int id, Team team) {
         Coach coach = getCoach(id);
         coach.setTeam(team);
-        coaches.put(id,coach);
+        coaches.put(id, coach);
     }
 
     // Delete
@@ -112,7 +113,7 @@ public class FootballStatisticsDB {
 
     // Create
     public void addTeam(Team team) {
-        if(team == null){
+        if (team == null) {
             System.out.println("coach is null.");
             return;
         }
@@ -123,7 +124,7 @@ public class FootballStatisticsDB {
 
     // Read
     public Team getTeam(int id) {
-        if(!teams.containsKey(id)){
+        if (!teams.containsKey(id)) {
             return null;
         }
         return teams.get(id);
@@ -137,7 +138,7 @@ public class FootballStatisticsDB {
     public void updateTeamName(int id, String name) {
         Team team = getTeam(id);
         team.setName(name);
-        teams.put(id,team);
+        teams.put(id, team);
     }
 
     // Delete
