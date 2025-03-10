@@ -24,10 +24,9 @@ public class Team {
         this.id = id;
     }
 
-    public Team getById(int id){
-        return new Team(id);
+    public void setName(String name){
+        this.name = name;
     }
-
     public String toString(){
         return "Team {" +
                 "id=" + id +

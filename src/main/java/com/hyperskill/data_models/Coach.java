@@ -8,7 +8,22 @@ package com.hyperskill.data_models;
  */
 
 public class Coach extends Person{
-    private String team;
+    private int id;
+    private Team team;
+    public Coach(int id, String firstName, String lastName, Team team){
+        super(firstName, lastName);
+        this.id = id;
+        this.team = team;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
     public void displayStats(){}
     public void updateStats(){}
 }
