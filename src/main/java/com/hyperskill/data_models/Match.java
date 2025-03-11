@@ -1,4 +1,4 @@
-package com.hyperskill.model;
+package com.hyperskill.data_models;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -43,14 +43,14 @@ public class Match {
 
     private void updateTeamStats() {
         if (team1Score > team2Score) {
-            team1.recordWin();
-            team2.recordLoss();
+            team1.win();
+            team2.lose();
         } else if (team2Score > team1Score) {
-            team2.recordWin();
-            team1.recordLoss();
+            team2.win();
+            team1.lose();
         } else {
-            team1.recordDraw();
-            team2.recordDraw();
+            team1.draw();
+            team2.draw();
         }
     }
 
@@ -68,14 +68,14 @@ public class Match {
         team2.getCoach().incrementMatchesCoached();
         
         if (team1Score > team2Score) {
-            team1.getCoach().recordWin();
-            team2.getCoach().recordLoss();
+            team1.getCoach().win();
+            team2.getCoach().lose();
         } else if (team2Score > team1Score) {
-            team2.getCoach().recordWin();
-            team1.getCoach().recordLoss();
+            team2.getCoach().win();
+            team1.getCoach().lose();
         } else {
-            team1.getCoach().recordDraw();
-            team2.getCoach().recordDraw();
+            team1.getCoach().draw();
+            team2.getCoach().draw();
         }
     }
 

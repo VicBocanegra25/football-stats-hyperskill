@@ -11,6 +11,7 @@ public class Player extends Person {
     private int id;
     private Team team;
     private int goals;
+    private int matchesPlayed;
 
     public Player(){}
 
@@ -49,8 +50,8 @@ public class Player extends Person {
         this.team = team;
     }
 
-    public void setGoals(int goals) {
-        this.goals = goals;
+    public void addGoals(int goals) {
+        this.goals += goals;
     }
 
     @Override
@@ -70,4 +71,13 @@ public class Player extends Person {
 
     public void updateStats() {
     }
+
+    public void incrementMatchesPlayed() {
+        this.matchesPlayed++;
+    }
+
+    public int getMatchesPlayed() {
+        return matchesPlayed;
+    }
+
 }

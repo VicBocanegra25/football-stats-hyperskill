@@ -51,7 +51,7 @@ public class FootballStatisticsDB {
     // Update
     public void updatePlayerGoals(int id, int goals) {
         Player player = getPlayer(id);
-        player.setGoals(goals);
+        player.addGoals(goals);
         players.put(id, player);
     }
 

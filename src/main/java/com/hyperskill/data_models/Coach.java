@@ -10,7 +10,12 @@ package com.hyperskill.data_models;
 public class Coach extends Person {
     private int id;
     private Team team;
+    private int matchesCoached = 0;
+    private int wins = 0;
+    private int losses = 0;
+    private int draws = 0;
 
+    
     public Coach(){}
 
     public Coach(int id, String firstName, String lastName, Team team) {
@@ -31,5 +36,21 @@ public class Coach extends Person {
     }
 
     public void updateStats() {
+    }
+
+    public void incrementMatchesCoached() {
+        matchesCoached++;
+    }
+
+    public void win() {
+        wins++;
+    }
+
+    public void lose() {
+        losses++;
+    }
+
+    public void draw() {
+        draws++;
     }
 }

@@ -15,6 +15,9 @@ public class Team {
     private String name;
     private List<Player> players;
     private Coach coach;
+    private int wins = 0;
+    private int losses = 0;
+    private int draws = 0;
 
     public Team(){}
 
@@ -41,4 +44,45 @@ public class Team {
 
     public void updateStats() {
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Coach getCoach() {
+        return coach;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public int getDraws() {
+        return draws;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void win() {
+        wins++;
+    }
+
+    public void lose() {
+        losses++;
+    }
+
+    public void draw() {
+        draws++;
+    }
+
 }
